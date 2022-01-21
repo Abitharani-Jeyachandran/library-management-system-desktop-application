@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+    <head>
+        <title>Library Management System</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    </head>
+    <body>
+        <div>Categories</div>
+        <div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                    <th>Category ID</th>
+                    <th>Category Name</th>
+                    <th>Books</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <th:block th:each="category : ${listCategories}">
+                        <tr>
+                            <td>
+                                [[${category.id}]]
+                            </td>
+                            <td>
+                                [[${category.name}]]
+                            </td>
+                            <td>
+                                [[${category.book}]]
+                            </td>
+                        </tr>
+                    </th:block>
+                </tbody>
+            </table>
+        </div>
+       
+    </body>
+</html>

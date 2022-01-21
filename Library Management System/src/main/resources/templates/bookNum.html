@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+    <head>
+        <title>Library Management System</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    </head>
+    <body>
+        <div class="container">
+        
+        <div>Books List</div>
+        <div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                    <th>ID</th>
+                    <th>Book Name</th>
+                    <th>Book Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <th:block th:each="bookNum : ${listBookNum}">
+                        <tr>
+                            <td>
+                                [[${bookNum.id}]]
+                            </td>
+                            <td>
+                                [[${bookNum.book}]]
+                            </td>
+                            <td>
+                                [[${bookNum.number}]]
+                            </td>
+                        </tr>
+                    </th:block>
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </body>
+</html>
